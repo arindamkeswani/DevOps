@@ -41,3 +41,10 @@ To avoid costs, I have not performed the other queries, as the database is quite
 Feel free to visit the link and perform the rest yourselves
 
 > After you are done experimenting, cleanup, i.e. [delete the table](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.NodeJs.05.html) to avoid unnecessary costs
+
+
+
+Result:
+![](2022-03-05-17-22-26.png)
+
+![](2022-03-05-17-23-04.png)
