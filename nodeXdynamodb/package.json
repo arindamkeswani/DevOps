@@ -1,0 +1,15 @@
+{
+  "name": "nodexdynamodb",
+  "version": "1.0.0",
+  "description": "Prerequisites:",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.53.0"
+  }
+}
