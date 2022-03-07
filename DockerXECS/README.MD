@@ -48,3 +48,17 @@ Steps:
         ![](2022-03-07-17-07-48.png)
 
         > Now, our image has been pushed to the repo, very similar to how we do it on Docker Hub.
+
+
+4. To run our application, we need a server and some networking, and we will start doing that by setting up a Cluster
+    - This cluster will basically be an EC2 instance, that will be our server where our application will run
+    - On AWS Manageent Console, in ECS service, Click on Clusters, Create Cluster
+    - Choose "EC2 Linux + Networking", Next Step
+    - Give your cluster a name
+    - Choose t2.micro EC2 instance for now
+    - In Networking section, choose default VPC. Pick the first subnet
+    - Auto-assign public IP: Enabled
+    - Choose default security group
+    - Create Cluster
+
+    > This should create your Cluster. You can confirm this by going to your EC2 console. You will find a new instance there.
