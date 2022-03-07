@@ -79,4 +79,14 @@ Steps:
 
     ![](2022-03-07-17-36-59.png)
 
-    
+6. Go to EC2 instances, open your instance's details
+    - Copy Public IPv4 address
+    - Paste it in the browser
+    - Add 6565 to suffix of URL, hit Enter. THIS WILL NOT WORK as we have not exposed the port to the security groups
+    - Note the security group that your instance is using
+    - Go to security groups, edit the inbound rules. Add 2 new rules as such:
+
+    ![](2022-03-07-17-43-16.png)
+
+    - Go back and refresh your applicatoin. It is now deployed
+
