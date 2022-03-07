@@ -62,3 +62,21 @@ Steps:
     - Create Cluster
 
     > This should create your Cluster. You can confirm this by going to your EC2 console. You will find a new instance there.
+
+5. Next, we need to run a Task
+    - Go to Task Definitions. Here, we are expected to specify how much CPU power, memory etc. do we need. Follow the steps given below:
+        - Create Task Definition
+        - EC2, Next Step
+        - Give Task definition name
+        - In Task Size section, give memory `100` MiB and Task CPU as `1 vCPU` (this will be deleted at the end of this experiment)
+        - Add container
+        - Give container name, paste Image repository URI in the relevant sections
+        - Port Mappings: Host port->6565, Container port->5000
+        - Click on Add
+        - Create task
+
+    - Go to your app's cluster-> Task-> Run New Task -> Launch type: EC2 -> Run
+
+    ![](2022-03-07-17-36-59.png)
+
+    
