@@ -88,5 +88,10 @@ Steps:
 
     ![](2022-03-07-17-43-16.png)
 
-    - Go back and refresh your applicatoin. It is now deployed
+    - Go back and refresh your application. It is now deployed.
+
+7. Cleanup
+    - Go to your cluster in ECS and delete it
+    - Go to ECR and delete your repository
+    - Go to Task Definitions and Deregister the task
 
