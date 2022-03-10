@@ -4,7 +4,7 @@
 3. Knowledge of EC2 instances
 
 > Steps:
-1. Terraform overview | Launch EC2 Instance
+1. Terraform overview | Launch EC2 Instance 
     - Create a file: "main.tf"
     - Define a "provider", which is a plug-in that allows us to interact with APIs. Learn more about the list of providers available [here](https://registry.terraform.io/browse/providers).
     - Go to the link in the previous line and select AWS, which is what we will be working with.
@@ -39,9 +39,20 @@
         ![](2022-03-09-18-55-19.png)
         ![](2022-03-09-18-55-39.png)
 
-        - If you would run `terraform plan` and `terraform apply` again, it will detect that there is no difference in the required configuration
+        
+2. Modifying resources
+    -  If you would run `terraform plan` and `terraform apply` again, it will detect that there is no difference in the required configuration
         ![](2022-03-10-10-37-53.png)
 
-        - Try changing the "Name" tag and run `terraform plan` `terraform apply` again. You do not need to run `plan`, but it is considered good practice. After doing so, check EC2 console to see if the change has been made.
+    - Try changing the "Name" tag and run `terraform plan`,  `terraform apply` again. You do not need to run `plan`, but it is considered good practice. After doing so, check EC2 console to see if the change has been made
 
-        - ![](2022-03-10-10-43-55.png)
+        ![](2022-03-10-10-43-55.png)
+
+3. Deleting resources
+    - To destroy instances, we can run the command `terraform destroy`. This will delete the instance that we made previously, and everything associated with it after we enter "yes", when prompted.
+
+    ![](2022-03-10-11-40-08.png)
+
+    - Go to your AWS Console to confirm this
+
+    - To delete a particular resource, just comment out the piece of code (or remove it altogether) that is used to launch it and run `terraform apply` again. This is the advantage of Terraform havinga declarative nature

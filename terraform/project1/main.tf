@@ -13,13 +13,13 @@ provider "aws" {
   secret_key = ""
 }
 
-# Create a VPC
-resource "aws_instance" "my-first-server" {
-  ami = "ami-0e472ba40eb589f49"
+# Create an instance
+# resource "aws_instance" "my-first-server" {
+#   ami = "ami-0e472ba40eb589f49"
 
-  instance_type = "t2.micro"
+#   instance_type = "t2.micro"
 
-  tags = {
-    Name = "terraform_project_1_sample_name_change"
-  }
-}
+#   tags = {
+#     Name = "terraform_project_1_sample_name_change"
+#   }
+# }
