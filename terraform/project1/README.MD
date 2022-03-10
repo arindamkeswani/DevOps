@@ -56,3 +56,12 @@
     - Go to your AWS Console to confirm this
 
     - To delete a particular resource, just comment out the piece of code (or remove it altogether) that is used to launch it and run `terraform apply` again. This is the advantage of Terraform havinga declarative nature
+
+4. Referencing resources
+    - Now that we have seen how to creat an instance, let's work with VPCs and subnets
+    - Find terraform docs for aws_vpc [here](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc)
+    - Create a VPC in the same manner as given in the main.tf file 
+    - To create a subnet, refer to the [documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) in a similar manner
+    - Notice that we have not deployed the VPC yet so we do not have its ID, which needs to be specified in the subnet, so to solve this terraform allows us to reference resources as done in `main.tf` file
+    - Run `terraform plan`, then `terraform apply` to launch it. Confirm this on your AWS Console
+    - The order in which we define the resources does not matter, terraform will launch the VPC before the subnet. You can check this in the output of the `terraform apply` command. Terraform knows that the VPC needs to be created first.
