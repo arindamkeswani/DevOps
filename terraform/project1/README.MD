@@ -38,3 +38,10 @@
         The launch should be complete. Go to your AWS Console to confirm this.
         ![](2022-03-09-18-55-19.png)
         ![](2022-03-09-18-55-39.png)
+
+        - If you would run `terraform plan` and `terraform apply` again, it will detect that there is no difference in the required configuration
+        ![](2022-03-10-10-37-53.png)
+
+        - Try changing the "Name" tag and run `terraform plan` `terraform apply` again. You do not need to run `plan`, but it is considered good practice. After doing so, check EC2 console to see if the change has been made.
+
+        - ![](2022-03-10-10-43-55.png)
