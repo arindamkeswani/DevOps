@@ -8,7 +8,7 @@
     - Create a file: "main.tf"
     - Define a "provider", which is a plug-in that allows us to interact with APIs. Learn more about the list of providers available [here](https://registry.terraform.io/browse/providers).
     - Go to the link in the previous line and select AWS, which is what we will be working with.
-    - Check out the example code in th docs, which is what you will find in `main.tf` as well.
+    - Check out the example code in the docs, which is what you will find in `main.tf` as well.
     - Now, set-up authentication
         - The wrong way: hard-code the AWS Access keys in the `provider` section. You may try this for the experiment but be sure that you do not committ your code to a public repository. We will follow this for now.
         - The correct way: Make a `terraform.tfvars` file.
@@ -65,3 +65,8 @@
     - Notice that we have not deployed the VPC yet so we do not have its ID, which needs to be specified in the subnet, so to solve this terraform allows us to reference resources as done in `main.tf` file
     - Run `terraform plan`, then `terraform apply` to launch it. Confirm this on your AWS Console
     - The order in which we define the resources does not matter, terraform will launch the VPC before the subnet. You can check this in the output of the `terraform apply` command. Terraform knows that the VPC needs to be created first.
+
+5. Terraform files
+    - You may have noticed the extra files that were created in your project directory
+    - The `.terraform` folder was initialised with the `terraform init` command. It contains the files necessary to launch the resources via the required provider. You can test this by deleting the folder and trying to run `terraform apply`, which will throw an error.
+    - `terraform.tfstate` represents all the states for our terraform config. This is used to compare the changes, Try creating another VPC with a subnet and look for changes in the `terraform.tfstate` file.
