@@ -70,3 +70,35 @@
     - You may have noticed the extra files that were created in your project directory
     - The `.terraform` folder was initialised with the `terraform init` command. It contains the files necessary to launch the resources via the required provider. You can test this by deleting the folder and trying to run `terraform apply`, which will throw an error.
     - `terraform.tfstate` represents all the states for our terraform config. This is used to compare the changes, Try creating another VPC with a subnet and look for changes in the `terraform.tfstate` file.
+
+
+> Project
+
+### Objective: Deploy an EC2 instance on a custom VPC, on a custom subnet, assign it a public IP address, establish a SSH connection, and handle web traffic using web servers
+
+
+Prerequisites:
+- [Create a Key-Pair on AWS](https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#KeyPairs:), download it. I have used a .pem file format for this example
+
+#### Steps
+
+1. Create VPC
+    - 
+2. Create Internet Gateway
+    - Used to send traffic out to the internet and use a public IP Address
+3. Create custom route table
+4. Create a subnet
+5. Associate subnet with route table
+6. Allow ports 22, 80, 443 using Security Groups
+7. Create network interface with an IP in the previously created subnet
+8. Assign Elastic IP to the network interface
+    - EIP depends on IGW
+9. Create Ubuntu server and install/enable apache2
+    - It is important to specify the availability zone, which should be the same as the subnet (created in step 4), otherwise trying to launch the instance may cause an error
+
+- After completing the steps, run `terraform`
+
+- Feel free to review and confirm everything on the AWS Console
+- After the EC2 instance has been initialized, try going to its public IP Address
+
+![](2022-03-10-18-55-42.png)
