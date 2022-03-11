@@ -150,3 +150,13 @@ Prerequisites:
 - To do the opposite i.e. launch this particular resource, run `terraform apply -target aws_instance.web-server-instance`
  where `aws_instance.web-server-instance` is the resource name
 
+> Terraform Variables
+- We can store values inside variables, just like any other language. Check out the (docs)[https://www.terraform.io/language/values/variables] and try to make sense of the example in the main.tf file
+- On applying, you will notice that the CLI asks us for an input for the variable that we have specified
+- Another way of doing so is by using the (`-var`)[https://www.terraform.io/language/values/variables#variables-on-the-command-line] flag
+- Most common way to assign variables is to use a separate file (terraform.tfvars) to store them. I will be using this to store by access keys. You can check the syntax for it in the `terraform.tfvars.example` file. 
+The "subnet_prefix" variable is being used as array of objects in this example.
+
+- You can change the file name and use `terraform apply -var-file="<filename>.tfvars"` to tell terraform about the variables
+
+- So we define the variable in the `main.tf` file but we specify the value in the `terraform.tfvars` file
