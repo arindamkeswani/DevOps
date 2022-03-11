@@ -127,7 +127,7 @@ Prerequisites:
 - Make sure that you destroy the resources after you are done to prevent any unnecessary charges.
 
 
-> Terraform commands
+> Terraform state commands
 - You may want to deploy some resources for this e.g. the resources that you had launched in the project
 - `terraform`: Gives list of commands
 - `terraform state`: List of state commands
@@ -135,9 +135,18 @@ Prerequisites:
 - `terraform state show <resource name>`: Gives details of the resource
 ![](2022-03-11-12-42-36.png)
 
+> Terraform output
 - Instead of writing commands everytime we want to see some necessary details, we can just print them as output when we launch the resources using `terraform apply`
 - E.g. We want to print the public IP, private IP, and the server ID, we can do so by following the snippet in the main.tf file and running `terraform apply` again.
 
 ![](2022-03-11-13-08-48.png)
 
 - We can verify these outputs using `terraform output` command
+
+> Target resources
+- We can delete individual resources as well, instead of destroying the infrastructure completely, say, we wish to delete the EC2 instance, we can look up the exact resource name and delete it in the following format:
+![](2022-03-11-13-19-17.png)
+
+- To do the opposite i.e. launch this particular resource, run `terraform apply -target aws_instance.web-server-instance`
+ where `aws_instance.web-server-instance` is the resource name
+
