@@ -74,7 +74,7 @@
 
 > Project
 
-### Objective: Deploy an EC2 instance on a custom VPC, on a custom subnet, assign it a public IP address, establish a SSH connection, and handle web traffic using web servers
+### Objective: Deploy a WEB SERVER (Deploy an EC2 instance on a custom VPC, on a custom subnet, assign it a public IP address, establish a SSH connection, and handle web traffic using web servers)
 
 
 Prerequisites:
@@ -101,4 +101,27 @@ Prerequisites:
 - Feel free to review and confirm everything on the AWS Console
 - After the EC2 instance has been initialized, try going to its public IP Address
 
-![](2022-03-10-18-55-42.png)
+![](2022-03-11-12-06-28.png)
+
+10. Bonus: Connect to the server using SSH client
+
+- Now, we will try to connect to the IP address using SSH
+- Download (PuTTY)[https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html]
+- Install it and search for it in your device. The search result will also show "puTTYgen". Click on it.
+- Similar to the .pem file that we downloaded as a key-pair, puTTY uses .ppk files to establish connection. puTTYgen enables us to convert our .pem file to .ppk
+- In puTTYgen, click "Load"
+- Enable "All files" option
+- Choose your key
+- Save private key. Close window.
+- Open puTTY
+- Go to your instance and hit "Connect", select "SSH Client" tab. See the instructions.
+- ![](2022-03-11-12-08-56.png)
+- Copy this part and paste it in "Host Name" section on PuTTY.
+- Inside Connection tab, click on SSH Option-> Auth -> Select your file in "Private key file for authentication" -> Open. This should open up a terminal.
+- Wait for a message to pop-up. Click "accept".
+- After it loads, try running the `systemctl status apache2` command. You should see the subsequent output
+
+![](2022-03-11-12-14-28.png)
+
+- We have successfully started the server using the SSH client (puTTY), which was the objective.
+- Make sure that you destroy the resources after you are done to prevent any unnecessary charges.
