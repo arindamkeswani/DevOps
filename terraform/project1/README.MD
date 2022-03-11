@@ -125,3 +125,12 @@ Prerequisites:
 
 - We have successfully started the server using the SSH client (puTTY), which was the objective.
 - Make sure that you destroy the resources after you are done to prevent any unnecessary charges.
+
+
+> Terraform commands
+- You may want to deploy some resources for this e.g. the resources that you had launched in the project
+- `terraform`: Gives list of commands
+- `terraform state`: List of state commands
+- `terraform state list`: Gives list of resources that we have created
+- `terraform state show <resource name>`: Gives details of the resource
+![](2022-03-11-12-42-36.png)
