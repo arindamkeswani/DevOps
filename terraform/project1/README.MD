@@ -134,3 +134,10 @@ Prerequisites:
 - `terraform state list`: Gives list of resources that we have created
 - `terraform state show <resource name>`: Gives details of the resource
 ![](2022-03-11-12-42-36.png)
+
+- Instead of writing commands everytime we want to see some necessary details, we can just print them as output when we launch the resources using `terraform apply`
+- E.g. We want to print the public IP, private IP, and the server ID, we can do so by following the snippet in the main.tf file and running `terraform apply` again.
+
+![](2022-03-11-13-08-48.png)
+
+- We can verify these outputs using `terraform output` command
