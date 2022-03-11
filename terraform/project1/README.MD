@@ -71,7 +71,7 @@
     - The `.terraform` folder was initialised with the `terraform init` command. It contains the files necessary to launch the resources via the required provider. You can test this by deleting the folder and trying to run `terraform apply`, which will throw an error.
     - `terraform.tfstate` represents all the states for our terraform config. This is used to compare the changes, Try creating another VPC with a subnet and look for changes in the `terraform.tfstate` file.
 
-
+_______________________
 > Project
 
 ### Objective: Deploy a WEB SERVER (Deploy an EC2 instance on a custom VPC, on a custom subnet, assign it a public IP address, establish a SSH connection, and handle web traffic using web servers)
@@ -126,7 +126,7 @@ Prerequisites:
 - We have successfully started the server using the SSH client (puTTY), which was the objective.
 - Make sure that you destroy the resources after you are done to prevent any unnecessary charges.
 
-
+---
 > Terraform state commands
 - You may want to deploy some resources for this e.g. the resources that you had launched in the project
 - `terraform`: Gives list of commands
@@ -134,7 +134,7 @@ Prerequisites:
 - `terraform state list`: Gives list of resources that we have created
 - `terraform state show <resource name>`: Gives details of the resource
 ![](2022-03-11-12-42-36.png)
-
+---
 > Terraform output
 - Instead of writing commands everytime we want to see some necessary details, we can just print them as output when we launch the resources using `terraform apply`
 - E.g. We want to print the public IP, private IP, and the server ID, we can do so by following the snippet in the main.tf file and running `terraform apply` again.
@@ -142,14 +142,14 @@ Prerequisites:
 ![](2022-03-11-13-08-48.png)
 
 - We can verify these outputs using `terraform output` command
-
+---
 > Target resources
 - We can delete individual resources as well, instead of destroying the infrastructure completely, say, we wish to delete the EC2 instance, we can look up the exact resource name and delete it in the following format:
 ![](2022-03-11-13-19-17.png)
 
 - To do the opposite i.e. launch this particular resource, run `terraform apply -target aws_instance.web-server-instance`
  where `aws_instance.web-server-instance` is the resource name
-
+---
 > Terraform Variables
 - We can store values inside variables, just like any other language. Check out the (docs)[https://www.terraform.io/language/values/variables] and try to make sense of the example in the main.tf file
 - On applying, you will notice that the CLI asks us for an input for the variable that we have specified
