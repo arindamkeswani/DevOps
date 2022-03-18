@@ -1,0 +1,50 @@
+#RHS->variable
+# Strign variables
+name: Arindam Keswani
+name: !!str Arindam Keswani
+
+#Variables can be of many types
+fruit: "apple"
+job: 'Product Engineer'
+
+bio: |
+ You know
+ who I am
+
+#write a single line in multiple lines
+message: >
+ This will
+ Be in
+ A single line
+
+number: 5473
+marks: 33.55
+booleanValue: No #n, N, false, False, FALSE
+booleanVal: !!bool No #n, N, false, False, FALSE
+
+#same for true -> yes, y, Y
+
+#specify the type
+zero: !!int 0
+positiveNum: !!int 45
+negativeNum: !!int -45
+binaryNum: !!int -b11001
+octalNum: !!int 06574
+hexa: !!int 0x45
+commaValue: !!int +540_000 #540,000
+exponential numbers: 6.023E56
+
+#Floatig point numbers
+marks: !!float 56.89
+infinite: !!float .inf  
+not a num: .nan
+
+#null
+surname: !!null Null # null, NULL, ~
+~: this is a null key
+
+#dates and time (default UTC)
+date: !!timestamp 2002-12-14
+india time: 2002-12-14T02:59:43.10 +5:30
+no timezoe: 2002-12-14T02:59:43.10
+ 

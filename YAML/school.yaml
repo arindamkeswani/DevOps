@@ -1,0 +1,8 @@
+---
+School:
+- name: LMC
+  principal: Me
+  students:
+  - rno: 27
+    name: Arindam Keswani
+    marks: 99

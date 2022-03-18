@@ -1,0 +1,89 @@
+student: !!seq
+ - marks
+ - name
+ - roll_no
+
+#ALternate way
+cities: [new delhi, mumbai]
+
+#some keys in seq will be empty
+#sparse sequence
+sparse seq:
+ - hey
+ - how
+ -
+ - null
+ - yo
+
+#nested sequence
+-
+ - mango
+ - apple
+ - banana
+- 
+ - apple
+ - samsung
+ - Mi
+
+# key: vlaue pairs are called maps
+# !!map
+
+#nested mappings: map within a map
+name: Arindam Keswani
+role:
+ age: 78
+ jobb: student
+
+ # Same as below
+ name: Arindam Keswani
+ role: {age: 78, job: student}
+
+ # pairs: keys may have duplicate values
+ #!!pairs
+
+pair example: !!pairs
+ - job: student
+ - job: teacher
+#This will be an array of hashtables
+#Same as
+pair example: !!pairs [job: student, job: teacher]
+
+# !!set will allow you to have unique values
+names: !!set 
+ ? Arindam
+ ? Abhishek
+ ? Rishabh
+ ? Arindam
+
+#dictionary: !!omap 
+People: !!omap 
+ - Arindam:
+  name: Arindam Keswani
+  age: 22
+  height: 666
+ - Jasbir:
+  name: Jasbir Singh
+  age: 25
+  height: 456
+
+#Resusing properties using anchors
+likings: &likes
+ eating: apples
+ dislikes: bugs
+
+#copy paste
+person1:
+ name: Arindam Keswani
+ eating: apples
+ dislikes: bugs
+
+#using anchors
+person2:
+ name: Ari Keswani 
+ <<: *likes
+
+#Overriding anchors
+person3:
+ name: A Keswani 
+ <<: *likes
+ dislikes: bananas
