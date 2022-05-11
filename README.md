@@ -10,4 +10,4 @@ Tip: If you wish to use them as reference, detailed notes with steps have been c
 
 ---
 
-### [More notes on DevOps](https://drive.google.com/drive/folders/1dkC8cZ39tHZDXhrJqCRBSV4NKGDLwGLC?usp=sharing)
+### [More notes on DevOps](https://github.com/arindamkeswani/DevOps/tree/main/Notes)
